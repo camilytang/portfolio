@@ -1,0 +1,131 @@
+/* components/FrameCard.css - Legit photo frame design */
+.frame-card {
+  cursor: pointer;
+  animation: frameAppear 0.5s ease-out backwards;
+  transition: transform 0.3s ease;
+}
+
+@keyframes frameAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.photo-frame {
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.frame-card:hover .photo-frame {
+  transform: translateY(-8px);
+}
+
+.frame-outer-border {
+  background: #D4A574;
+  padding: 12px;
+  border-radius: 4px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.frame-inner-border {
+  background: #C4956A;
+  padding: 8px;
+  border-radius: 2px;
+}
+
+.frame-mat {
+  background: #F5F0E8;
+  padding: 16px;
+  border: 1px solid #E8DCD0;
+}
+
+.frame-artwork {
+  height: 200px;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  border-radius: 2px;
+}
+
+.frame-card:hover .frame-artwork {
+  filter: brightness(1.02);
+}
+
+.artwork-content {
+  text-align: center;
+}
+
+.artwork-emoji {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+}
+
+.artwork-year {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.7rem;
+  color: #8B7355;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 4px 10px;
+  border-radius: 20px;
+}
+
+.frame-label-plaque {
+  background: #FFF8F0;
+  padding: 16px;
+  margin-top: 16px;
+  border-radius: 4px;
+  border-left: 3px solid #D4A574;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.project-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #2C3E66;
+  margin-bottom: 4px;
+}
+
+.project-subtitle {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.7rem;
+  color: #FF8C42;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 12px;
+}
+
+.tech-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.tech-pill {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.65rem;
+  background: linear-gradient(135deg, #FFF0E6, #E8F0FF);
+  padding: 4px 10px;
+  border-radius: 20px;
+  color: #4A6FA5;
+}
+
+.frame-card:hover .frame-outer-border {
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+}
+
+.frame-card:hover .frame-label-plaque {
+  border-left-color: #FF8C42;
+}
