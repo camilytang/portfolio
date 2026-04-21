@@ -12,7 +12,7 @@ const EntranceGate = ({ onEnter }: EntranceGateProps) => {
       gateElement.classList.add('fade-out');
       setTimeout(() => {
         onEnter();
-      }, 800);
+      }, 600);
     } else {
       onEnter();
     }
@@ -21,31 +21,23 @@ const EntranceGate = ({ onEnter }: EntranceGateProps) => {
   return (
     <div className="entrance-gate visible">
       <div className="entrance-overlay"></div>
-      <div className="floral-decoration left-floral"></div>
-      <div className="floral-decoration right-floral"></div>
       <div className="entrance-panel">
-        <div className="museum-badge">✦ EST. 2025 ✦</div>
+        <div className="museum-badge">EST. 2025</div>
         <h1 className="entrance-title">
-          Museum of <span className="highlight">Camily Tang</span>
+          Museum of<br />
+          <span className="highlight">Camily Tang</span>
         </h1>
-        <div className="divider">
-          <span className="divider-flower">✦</span>
-          <span className="divider-line"></span>
-          <span className="divider-flower">✦</span>
-        </div>
+        <div className="divider"></div>
         <p className="entrance-subtitle">
-          Data Engineer • Full Stack Developer
+          Data Engineer / Full Stack Developer
         </p>
         <p className="entrance-quote">
-          "Where data meets artistry"
+          data × artistry
         </p>
         <button className="enter-button" onClick={handleEnter}>
-          <span className="button-text">Enter Museum</span>
-          <span className="button-flower">→</span>
+          enter
+          <span className="button-arrow">→</span>
         </button>
-        <div className="entrance-footer">
-          <span className="footer-flower">✧</span> Virtual Art Exhibition <span className="footer-flower">✧</span>
-        </div>
       </div>
     </div>
   );

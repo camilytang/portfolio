@@ -1,4 +1,4 @@
-// components/FrameCard.tsx - Updated with real photo frame design
+// components/FrameCard.tsx
 import './FrameCard.css';
 
 interface Project {
@@ -9,7 +9,6 @@ interface Project {
   techStack: string[];
   githubUrl: string;
   imageColor: string;
-  flowerEmoji: string;
 }
 
 interface FrameCardProps {
@@ -27,30 +26,22 @@ const FrameCard = ({ project, onClick, index }: FrameCardProps) => {
       onClick={onClick}
       style={{ animationDelay }}
     >
-      <div className="photo-frame">
-        <div className="frame-outer-border">
-          <div className="frame-inner-border">
-            <div className="frame-mat">
-              <div 
-                className="frame-artwork"
-                style={{ backgroundColor: project.imageColor }}
-              >
-                <div className="artwork-content">
-                  <span className="artwork-emoji">{project.flowerEmoji}</span>
-                  <span className="artwork-year">✦ {new Date().getFullYear()}</span>
-                </div>
-              </div>
-            </div>
+      <div className="minimal-photo-frame">
+        <div className="frame-artwork" style={{ backgroundColor: project.imageColor }}>
+          <div className="artwork-content">
+            <span className="artwork-symbol">◆</span>
           </div>
         </div>
-        <div className="frame-label-plaque">
+        <div className="frame-label">
           <h3 className="project-title">{project.title}</h3>
           <p className="project-subtitle">{project.subtitle}</p>
+          <p className="project-description">{project.description}</p>
           <div className="tech-pills">
-            {project.techStack.slice(0, 3).map((tech, i) => (
+            {project.techStack.slice(0, 4).map((tech, i) => (
               <span key={i} className="tech-pill">{tech}</span>
             ))}
           </div>
+          <button className="view-btn">view project →</button>
         </div>
       </div>
     </div>

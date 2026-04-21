@@ -11,7 +11,6 @@ interface Project {
   techStack: string[];
   githubUrl: string;
   imageColor: string;
-  flowerEmoji: string;
 }
 
 interface ProjectModalProps {
@@ -39,27 +38,17 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
         <button className="modal-close" onClick={onClose}>✕</button>
         
         <div className="modal-artwork" style={{ backgroundColor: project.imageColor }}>
-          <div className="modal-flower-decor">
-            <span className="modal-big-flower">{project.flowerEmoji}</span>
-            <span className="modal-small-flower">✿</span>
-            <span className="modal-small-flower">🌼</span>
-          </div>
+          <div className="modal-symbol">◆</div>
         </div>
         
         <div className="modal-content">
           <h2 className="modal-title">{project.title}</h2>
           <p className="modal-subtitle">{project.subtitle}</p>
-          
-          <div className="modal-divider">
-            <span className="modal-divider-line"></span>
-            <span className="modal-divider-flower">🌸</span>
-            <span className="modal-divider-line"></span>
-          </div>
-          
+          <div className="modal-divider"></div>
           <p className="modal-description">{project.fullDescription}</p>
           
           <div className="modal-tech-section">
-            <h4>Artisan Tools</h4>
+            <h4>tech stack</h4>
             <div className="modal-tech-list">
               {project.techStack.map((tech, i) => (
                 <span key={i} className="modal-tech-item">{tech}</span>
@@ -73,8 +62,7 @@ const ProjectModal = ({ project, onClose }: ProjectModalProps) => {
             rel="noopener noreferrer"
             className="modal-github-btn"
           >
-            <span className="btn-icon">📂</span> Visit Exhibition Repository
-            <span className="btn-arrow">↗</span>
+            view on github →
           </a>
         </div>
       </div>
